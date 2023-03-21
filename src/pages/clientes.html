@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../css/styles.css" type="text/css">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <title>CRM</title>
+</head>
+
+<!-- Menú horizontal -->
+
+<nav class="fixed top-0 z-50 w-full bg-color-tertiary border-b border-gray-200">
+   <div class="px-3 py-3 lg:px-5 lg:pl-3">
+      <div class="flex items-center justify-between">
+
+         <div class="flex items-center justify-start">
+            <a href="/index.html" class="flex ml-2 md:mr-24">
+               <img src="../img/logo/XYZ blanco.png" class="h-8 ml-3 mr-3" alt="" />
+            </a>
+         </div>
+
+         <div class="flex items-center">
+            <div class="flex items-center ml-3">
+               <div>
+                  <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                     <img class="w-8 h-8 rounded-full" src="../img/recursos/avatar.jpg" alt="user photo">
+                  </button>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+</nav>
+
+<!-- Menú lateral -->
+
+<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0" aria-label="Sidebar">
+   <div class="h-full px-3 pb-4 overflow-y-auto bg-white">
+      <ul class="space-y-2">
+
+         <li>
+            <a href="/index.html" class="flex items-center p-2 w-full text-base font-normal rounded-lg transition duration-75 group hover:bg-color-secondary">
+               <box-icon class="custom-icon-menu" type='solid' name='dashboard'></box-icon>
+               <span class="ml-3 text-color-tertiary font-medium">Dashboard</span>
+            </a>
+         </li>
+
+         <li>
+            <button type="button" id="crm" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-color-secondary" aria-controls="dropdown-pages" data-collapse-toggle="dropdown-pages">
+               <box-icon class="custom-icon-menu" name='user-pin'></box-icon>
+               <span class="flex-1 ml-3 text-color-tertiary font-medium text-left whitespace-nowrap">CRM</span>
+               <box-icon class="custom-icon-menu" name='chevron-down' ></box-icon>
+            </button>
+            <ul id="menu-crm" class="hidden">
+               <div class="flex items-center p-2 w-full text-base font-normal rounded-lg transition duration-75 group hover:bg-gray-100">
+                  <li class="inline-flex ml-6">
+                     <box-icon class="custom-icon-menu" name='user-badge' type='solid' ></box-icon>
+                     <a href="../pages/contactos.html" class="flex-1 ml-3 text-color-tertiary font-medium text-left whitespace-nowrap">Contactos</a>
+                  </li>
+               </div>
+               <div class="flex items-center p-2 w-full text-base font-normal rounded-lg transition duration-75 group hover:bg-gray-100">
+                  <li class="inline-flex ml-6">
+                     <box-icon class="custom-icon-menu" name='user-circle' type='solid' ></box-icon>
+                     <a href="../pages/clientes.html" class="flex-1 ml-3 text-color-tertiary font-medium text-left whitespace-nowrap">Clientes</a>
+                  </li>
+               </div>
+               <div class="flex items-center p-2 w-full text-base font-normal rounded-lg transition duration-75 group hover:bg-gray-100">
+                  <li class="inline-flex ml-6">
+                     <box-icon class="custom-icon-menu" name='business' type='solid' ></box-icon>
+                     <a href="../pages/empresas.html" class="flex-1 ml-3 text-color-tertiary font-medium text-left whitespace-nowrap">Empresas</a>
+                  </li>
+               </div>
+               
+            </ul>
+         </li>
+
+      </ul>
+   </div>
+</aside>
+
+<!-- Contenido -->
+
+<div class="pt-4 pb-5 px-5 bg-gray-100 sm:ml-64 font-primary">
+   <div class="p-4 mt-14">
+
+      <!-- 1 Sección -->
+
+      <div id="" class="sticky grid grid-cols-2 gap-4 mb-4 pb-7 border-b border-color-tertiary">
+
+         <div class="flex items-center justify-start">
+            <h1 class="text-color-tertiary text-2xl font-bold">Clientes</h1>    
+               <label class="mr-4"></label>
+               <input type="search" id="searchCustomer" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-6 p-2.5" placeholder="Buscar">
+         </div>
+
+         <div class="flex items-center justify-end">
+            <button type="button" id="btn-create-customer" class="custom-button">Crear cliente</button>
+         </div>
+
+      </div>
+
+      <!-- Formulario -->
+
+      <div id="form-customer" class="hidden font-primary p-6 rounded-lg shadow-lg bg-white ">
+         <div class="grid justify-end -mt-3 mb-4">
+            <box-icon id="close-form-customer" class="custom-icon" type='solid' name='x-circle'></box-icon>
+         </div>
+         <form class="">
+            <div class="grid grid-cols-2 gap-4">
+               <div class="form-group mb-6">
+                  <input type="text" class="form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="nameCustomer" value="" placeholder="Nombre">
+               </div>
+               <div class="form-group mb-6">
+                  <input type="text" class="form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="surnameCustomer" value="" placeholder="Apellido">
+               </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+               <div class="form-group mb-6">
+                  <input type="email" class="form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="emailCustomer" value="" placeholder="Correo electrónico">
+               </div>
+               <div class="form-group mb-6">
+                  <input type="number" class="form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="numberCustomer" value="" placeholder="Teléfono">
+               </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+               <div class="form-group mb-6">
+                  <select class="form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="businessCustomer">
+                    <option value="">Seleccionar empresa</option>
+                  </select>
+                </div>
+               <div class="form-group mb-6">
+                  <input type="text" class="form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="annotationCustomer" value="" placeholder="Anotaciones">
+               </div>
+            </div>
+            <p id="errorNameCustomer" style="display: none;" class="text-red-600 py-5"></p>
+            <button type="submit" id="save-customer" class="custom-button">Guardar</button>
+         </form>
+      </div>
+
+      <!-- Imagen -->
+
+      <div id="imgCustomer" class="flex items-center justify-center font-primary mt-10 p-6 text-color-tertiary">
+         <div class="flex flex-col w-full items-center">
+            <img class="w-1/2 h-1/2" src="../img/recursos/ilustracion-contactos.svg" alt="">
+            <h1 class="font-bold text-3xl text-center mt-5">¿Aún no has<br>añadido tu primer cliente?</h1>
+            <div class="h-20"><br></div>
+         </div>
+      </div>
+
+      <!--Tabla contactos-->
+
+      <div id="containerCustomerTable" class="hidden relative mt-4 sm:rounded-lg h-screen overflow-auto">
+         <table id="customerTable" class="w-full mt-4 font-primary text-sm text-left text-gray-500">
+            <thead class="text-xs text-color-tertiary uppercase bg-color-secondary">
+               <tr>
+                  <th scope="col" class="px-6 py-3">
+                     <div class="flex items-center">
+                        Nombre
+                     </div>
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     <div class="flex items-center">
+                        Empresa
+                     </div>
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     <div class="flex items-center">
+                        Email
+                     </div>
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     <div class="flex items-center">
+                        Teléfono
+                     </div>
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     <div class="flex items-center">
+                        Anotaciones
+                     </div>
+                  </th>
+                  <th scope="col" class="px-6 py-3 text-end">
+                     <span class="sr-only"></span>
+                  </th>
+               </tr>
+            </thead>
+            <div id="customerInfoTable"></div>
+         </table>
+      </div>
+
+   </div>
+</div>
+
+<!-- Footer -->
+
+<div class="sm:ml-64 bg-gray-100">
+   <footer class="relative p-4 bg-white sm:p-6">
+      <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+      <div class="md:flex md:justify-between">
+
+         <div class="mb-6 md:mb-0">
+            <a href="https://flowbite.com/" class="flex items-center">
+               <!-- <img src="src/img/logo/XYZ.png" class="w-40 mr-3" alt="" /> -->
+               <img src="../img/logo/XYZ.png" class="w-40 mr-3" alt="" />
+            </a>
+         </div>
+
+         <div class="grid grid-cols-2 gap-10 sm:gap-6 sm:grid-cols-3">
+            <div>
+               <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Menú 1</h2>
+               <ul class="text-gray-600">
+                  <li class="mb-4">
+                     <a href="#" class="hover:underline">Opción 1</a>
+                  </li>
+                  <li>
+                     <a href="#" class="hover:underline">Opción 2</a>
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Menú 2</h2>
+               <ul class="text-gray-600">
+                  <li class="mb-4">
+                     <a href="#" class="hover:underline ">Opción 1</a>
+                  </li>
+                  <li>
+                     <a href="#" class="hover:underline">Opción 2</a>
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Menú 3</h2>
+               <ul class="text-gray-600">
+                  <li class="mb-4">
+                     <a href="#" class="hover:underline">Opción 1</a>
+                  </li>
+                  <li>
+                     <a href="#" class="hover:underline">Opción 2</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+      </div>
+
+      <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+      <div class="sm:flex sm:items-center sm:justify-between">
+         <span class="text-sm text-gray-500 sm:text-center">© 2023 <a href="#" class="hover:underline">xyzcrm. Todos los derechos reservados</a>
+         </span>
+         <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+            <box-icon class="custom-icon" type='logo' name='twitter'></box-icon>
+            <box-icon class="custom-icon" type='logo' name='linkedin-square'></box-icon>
+            <box-icon class="custom-icon" name='discord-alt' type='logo' ></box-icon>
+         </div>
+      </div>
+      
+   </footer>
+</div>
+
+
+
+
+<script src="../js/app.js"></script>
+<script src="../js/clientes.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>

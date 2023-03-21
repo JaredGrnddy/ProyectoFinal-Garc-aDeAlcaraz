@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .custom-button {
+        @apply py-2 px-5 mr-2 mb-2 text-sm font-primary text-color-tertiary font-medium bg-color-secondary rounded-full hover:bg-color-tertiary hover:text-color-secondary;
+    }
+
+    .custom-icon{
+        @apply fill-current text-color-tertiary cursor-pointer w-4 h-4 mr-2 hover:text-color-secondary;
+    }
+
+    .custom-icon-menu{
+        @apply fill-current text-color-tertiary;
+    }
+
+}
